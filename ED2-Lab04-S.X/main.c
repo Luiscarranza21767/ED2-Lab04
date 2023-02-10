@@ -58,9 +58,7 @@ void __interrupt() isr(void){
         }
 
         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-            //__delay_us(7);
             z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
-            //__delay_us(2);
             PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
             SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
             while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete

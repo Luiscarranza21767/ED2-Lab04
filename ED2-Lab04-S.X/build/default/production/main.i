@@ -2744,9 +2744,7 @@ void __attribute__((picinterrupt(("")))) isr(void){
         }
 
         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
-
             z = SSPBUF;
-
             PIR1bits.SSPIF = 0;
             SSPCONbits.CKP = 1;
             while(!SSPSTATbits.BF);

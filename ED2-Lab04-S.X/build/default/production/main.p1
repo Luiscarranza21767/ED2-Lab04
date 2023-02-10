@@ -405,137 +405,137 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 60:         if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i ! != -> . . _SSPSTATbits 0 2 `i -> 0 `i 141  ]
 {
-"62
-[; ;main.c: 62:             z = SSPBUF;
+"61
+[; ;main.c: 61:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"64
-[; ;main.c: 64:             PIR1bits.SSPIF = 0;
+"62
+[; ;main.c: 62:             PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"65
-[; ;main.c: 65:             SSPCONbits.CKP = 1;
+"63
+[; ;main.c: 63:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"66
-[; ;main.c: 66:             while(!SSPSTATbits.BF);
+"64
+[; ;main.c: 64:             while(!SSPSTATbits.BF);
 [e $U 142  ]
 [e :U 143 ]
 [e :U 142 ]
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 143  ]
 [e :U 144 ]
-"67
-[; ;main.c: 67:             PORTD = SSPBUF;
+"65
+[; ;main.c: 65:             PORTD = SSPBUF;
 [e = _PORTD _SSPBUF ]
-"68
-[; ;main.c: 68:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+"66
+[; ;main.c: 66:             _delay((unsigned long)((250)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"70
-[; ;main.c: 70:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+"68
+[; ;main.c: 68:         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
 }
 [e $U 145  ]
 [e :U 141 ]
 [e $ ! && ! != -> . . _SSPSTATbits 0 5 `i -> 0 `i != -> . . _SSPSTATbits 0 2 `i -> 0 `i 146  ]
 {
-"71
-[; ;main.c: 71:             z = SSPBUF;
+"69
+[; ;main.c: 69:             z = SSPBUF;
 [e = _z _SSPBUF ]
-"72
-[; ;main.c: 72:             BF = 0;
+"70
+[; ;main.c: 70:             BF = 0;
 [e = _BF -> -> 0 `i `b ]
-"73
-[; ;main.c: 73:             SSPBUF = lecADC;
+"71
+[; ;main.c: 71:             SSPBUF = lecADC;
 [e = _SSPBUF _lecADC ]
-"74
-[; ;main.c: 74:             SSPCONbits.CKP = 1;
+"72
+[; ;main.c: 72:             SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"75
-[; ;main.c: 75:             _delay((unsigned long)((250)*(8000000/4000000.0)));
+"73
+[; ;main.c: 73:             _delay((unsigned long)((250)*(8000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 250 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"76
-[; ;main.c: 76:             while(SSPSTATbits.BF);
+"74
+[; ;main.c: 74:             while(SSPSTATbits.BF);
 [e $U 147  ]
 [e :U 148 ]
 [e :U 147 ]
 [e $ != -> . . _SSPSTATbits 0 0 `i -> 0 `i 148  ]
 [e :U 149 ]
-"77
-[; ;main.c: 77:         }
+"75
+[; ;main.c: 75:         }
 }
 [e :U 146 ]
 [e :U 145 ]
-"79
-[; ;main.c: 79:         PIR1bits.SSPIF = 0;
+"77
+[; ;main.c: 77:         PIR1bits.SSPIF = 0;
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"80
-[; ;main.c: 80:     }
+"78
+[; ;main.c: 78:     }
 }
 [e :U 139 ]
-"81
-[; ;main.c: 81: }
+"79
+[; ;main.c: 79: }
 [e :UE 138 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"83
-[; ;main.c: 83: void main(void) {
+"81
+[; ;main.c: 81: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"84
-[; ;main.c: 84:     setupINTOSC(7);
+"82
+[; ;main.c: 82:     setupINTOSC(7);
 [e ( _setupINTOSC (1 -> -> 7 `i `uc ]
-"85
-[; ;main.c: 85:     portsetup();
+"83
+[; ;main.c: 83:     portsetup();
 [e ( _portsetup ..  ]
-"86
-[; ;main.c: 86:     ADC_config(0x01);
+"84
+[; ;main.c: 84:     ADC_config(0x01);
 [e ( _ADC_config (1 -> 1 `i ]
-"88
-[; ;main.c: 88:     while(1){
+"86
+[; ;main.c: 86:     while(1){
 [e :U 152 ]
 {
-"89
-[; ;main.c: 89:         lecADC = ADC_read(0);
+"87
+[; ;main.c: 87:         lecADC = ADC_read(0);
 [e = _lecADC -> ( _ADC_read (1 -> 0 `i `uc ]
-"90
-[; ;main.c: 90:         PORTB = lecADC;
+"88
+[; ;main.c: 88:         PORTB = lecADC;
 [e = _PORTB _lecADC ]
-"91
-[; ;main.c: 91:         _delay((unsigned long)((200)*(8000000/4000.0)));
+"89
+[; ;main.c: 89:         _delay((unsigned long)((200)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"93
-[; ;main.c: 93:     }
+"91
+[; ;main.c: 91:     }
 }
 [e :U 151 ]
 [e $U 152  ]
 [e :U 153 ]
-"94
-[; ;main.c: 94: }
+"92
+[; ;main.c: 92: }
 [e :UE 150 ]
 }
-"95
-[; ;main.c: 95: void portsetup(){
+"93
+[; ;main.c: 93: void portsetup(){
 [v _portsetup `(v ~T0 @X0 1 ef ]
 {
 [e :U _portsetup ]
 [f ]
-"96
-[; ;main.c: 96:     ANSELH = 0;
+"94
+[; ;main.c: 94:     ANSELH = 0;
 [e = _ANSELH -> -> 0 `i `uc ]
-"97
-[; ;main.c: 97:     TRISB = 0;
+"95
+[; ;main.c: 95:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"98
-[; ;main.c: 98:     PORTB = 0;
+"96
+[; ;main.c: 96:     PORTB = 0;
 [e = _PORTB -> -> 0 `i `uc ]
-"99
-[; ;main.c: 99:     TRISD = 0;
+"97
+[; ;main.c: 97:     TRISD = 0;
 [e = _TRISD -> -> 0 `i `uc ]
-"100
-[; ;main.c: 100:     PORTD = 0;
+"98
+[; ;main.c: 98:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"101
-[; ;main.c: 101:     I2C_Slave_Init(0x10);
+"99
+[; ;main.c: 99:     I2C_Slave_Init(0x10);
 [e ( _I2C_Slave_Init (1 -> -> 16 `i `uc ]
-"103
-[; ;main.c: 103: }
+"101
+[; ;main.c: 101: }
 [e :UE 154 ]
 }
