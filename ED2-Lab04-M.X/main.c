@@ -41,13 +41,22 @@
 #include "I2C.h"
 #include <stdint.h>
 #include <stdio.h>
+#include "DS3231.h"
 
 
 #define _XTAL_FREQ 8000000
+#define DS232_write 0xD0
+#define DS232_read 0xD1
 
 uint8_t lecADC;
 float conver;
 char valADC[3];
+char unidad;
+char decena;
+
+uint8_t sec;
+uint8_t min;
+uint8_t hor;
 
 void portsetup(void);
 
@@ -57,7 +66,11 @@ void main(void) {
     Lcd_Init();
     Lcd_Clear();
     Lcd_Set_Cursor(1,2);
-    Lcd_Write_String("S1: "); 
+    Lcd_Write_String("S1: ");
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String("    V");
+    Lcd_Set_Cursor(1,10);
+    Lcd_Write_String(":  :");
     
     while(1){
         
@@ -71,6 +84,31 @@ void main(void) {
         sprintf(valADC, "%.2f", conver);
         Lcd_Set_Cursor(2,1);
         Lcd_Write_String(valADC);
+        
+        sec = leer_sec();
+        Lcd_Set_Cursor(1, 15);
+        unidad = inttochar(descomponer(0, sec));
+        Lcd_Write_Char(unidad);
+        Lcd_Set_Cursor(1, 14);
+        decena = inttochar(descomponer(1, sec));
+        Lcd_Write_Char(decena);
+        
+        min = leer_min();
+        Lcd_Set_Cursor(1, 12);
+        unidad = inttochar(descomponer(0, min));
+        Lcd_Write_Char(unidad);
+        Lcd_Set_Cursor(1, 11);
+        decena = inttochar(descomponer(1, min));
+        Lcd_Write_Char(decena);
+        
+//        hor = leer_hora();
+//        Lcd_Set_Cursor(1, 9);
+//        unidad = inttochar(descomponer(0, hor));
+//        Lcd_Write_Char(unidad);
+//        Lcd_Set_Cursor(1, 8);
+//        decena = inttochar(descomponer(1, hor));
+//        Lcd_Write_Char(decena);
+        
         
     }
 }
