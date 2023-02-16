@@ -9,11 +9,10 @@
 #define	DS3231_H
 
 #include "I2C.h"
-
-uint8_t leer_hora(void);
-uint8_t leer_min(void);
-uint8_t leer_sec(void);
-uint8_t convertir(uint8_t valor);
+uint8_t leer_x(uint8_t address);
+void enviar_x(uint8_t val1, uint8_t val2, uint8_t val3, uint8_t val4, uint8_t val5);
+uint8_t convertir(uint8_t valor, uint8_t tipo);
+uint8_t desconvertir(uint8_t valor);
 
 #endif	/* DS3231_H */
 

@@ -90,19 +90,7 @@ unsigned short I2C_Master_Read(unsigned short a)
 //*****************************************************************************
 // Funci�n para inicializar I2C Esclavo
 //*****************************************************************************
-void I2C_Slave_Init(uint8_t address)
-{ 
-    SSPADD = address;
-    SSPCON = 0x36;      // 0b00110110
-    SSPSTAT = 0x80;     // 0b10000000
-    SSPCON2 = 0x01;     // 0b00000001
-    TRISC3 = 1;
-    TRISC4 = 1;
-    GIE = 1;
-    PEIE = 1;
-    SSPIF = 0;
-    SSPIE = 1;
-}
+
 //*****************************************************************************
 
 

@@ -2638,11 +2638,8 @@ extern __bank0 __bit __timeout;
 # 12 "./conversiones.h" 2
 
 
-uint8_t descomponer(int pos, uint16_t num);
+uint8_t descomponer(int pos, uint8_t num);
 char inttochar(uint8_t num);
-int chartoint(char num);
-int convint(char centenas, char decenas, char unidades);
-uint16_t mapeo(uint8_t valor, uint8_t inmin, uint8_t inmax, uint8_t outmin, uint16_t outmax);
 # 7 "conversiones.c" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdint.h" 1 3
@@ -2684,7 +2681,7 @@ char inttochar(uint8_t num){
     }
 }
 
-uint8_t descomponer(int pos, uint16_t num){
+uint8_t descomponer(int pos, uint8_t num){
     uint8_t cent;
     uint8_t dec;
     uint8_t uni;
@@ -2701,56 +2698,4 @@ uint8_t descomponer(int pos, uint16_t num){
         return uni;
     }
 
-}
-
-
-int chartoint(char num){
-    if (num == '0'){
-        return 0;
-    }
-    else if(num == '1'){
-        return 1;
-    }
-    else if(num == '2'){
-        return 2;
-    }
-    else if(num == '3'){
-        return 3;
-    }
-    else if(num == '4'){
-        return 4;
-    }
-    else if(num == '5'){
-        return 5;
-    }
-    else if(num == '6'){
-        return 6;
-    }
-    else if(num == '7'){
-        return 7;
-    }
-    else if(num == '8'){
-        return 8;
-    }
-    else if(num == '9'){
-        return 9;
-    }
-}
-
-
-int convint(char centenas, char decenas, char unidades){
-    int u;
-    int d;
-    int c;
-    u = chartoint(unidades);
-    d = chartoint(decenas);
-    c = chartoint(centenas);
-    return ((c*100)+(d*10)+u);
-}
-
-
-uint16_t mapeo(uint8_t valor, uint8_t inmin, uint8_t inmax, uint8_t outmin,uint16_t outmax){
-    uint16_t resultado;
-    resultado = (((outmax-outmin)* (long long)(valor-inmin))/inmax)+outmin;
-    return resultado;
 }
