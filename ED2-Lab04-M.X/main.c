@@ -5,7 +5,7 @@
  Proyecto: Laboratorio No.04
  Hardware PIC16F887
  Creado: 09/02/23
- Última Modificación: 09/02/23*/
+ Última Modificación: 15/02/23*/
 
 // CONFIG1
 #pragma config FOSC = INTRC_NOCLKOUT // Oscillator Selection bits (INTOSC 
@@ -63,100 +63,10 @@ uint8_t modo;
 void portsetup(void);
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy);
 
-//void __interrupt() isr (void){
-//    if(INTCONbits.RBIF){
-//        __delay_ms(20);
-//        if(PORTBbits.RB7 == 0){ // Botón que selecciona m, h, d, m, a
-//            if (modo <4){
-//                modo += 1;
-//            }
-//            else {
-//                modo = 0;
-//            }
-//        }
-//        else if(PORTBbits.RB6 == 0){
-//            segundo = sec;
-//            minuto = min;
-//            hora = hor;
-//            fecha1 = fecha;
-//            mes1 = mes;
-//            year1 = year;
-//            if (modo == 0){
-//                if (minuto<60){
-//                    minuto ++;   
-//                } 
-//                else {
-//                    minuto = 0;
-//                }
-//            }
-//            else if (modo == 1){
-//                if (hora<24){
-//                    hora ++;
-//                }
-//                else {
-//                    hora = 0;
-//                }
-//            }
-//            else if (modo == 2){
-//                fecha1 ++;
-//            }
-//            else if (modo == 3){
-//                mes1 ++;
-//            }
-//            else if (modo == 4){
-//                year1 ++;
-//            }
-//        }
-//        else if(PORTBbits.RB5 == 0){
-//            segundo = sec;
-//            minuto = min;
-//            hora = hor;
-//            fecha1 = fecha;
-//            mes1 = mes;
-//            year1 = year;
-//            if (modo == 0){
-//                if (minuto > 0){
-//                    minuto --;
-//                }
-//                else {
-//                    minuto = 60;
-//                }
-//            }
-//            else if (modo == 1){
-//                if (hora>0){
-//                    hora --;
-//                }
-//                else {
-//                    hora = 23;
-//                }
-//            }
-//            else if (modo == 2){
-//                fecha1 --;
-//            }
-//            else if (modo == 3){
-//                mes1 --;
-//            }
-//            else if (modo == 4){
-//                year1 --;
-//            }
-//        }
-//        
-//        minuto = desconvertir(minuto);
-//        hora = desconvertir(hora);
-//        fecha1 = desconvertir(fecha1);
-//        mes1 = desconvertir(mes1);
-//        year1 = desconvertir(year1);
-//        enviar_x(0, minuto, hora, 0);
-//        enviar_x(1, fecha1, mes1, year1);
-//        
-//        INTCONbits.RBIF = 0;
-//        
-//    }
-//}
-
 void main(void) {
     setupINTOSC(7);     //Oscilador a 8MHz
     portsetup();
+    // Inicio y constantes del display
     Lcd_Init();
     Lcd_Clear();
     Lcd_Set_Cursor(1,2);
@@ -168,7 +78,7 @@ void main(void) {
     Lcd_Set_Cursor(2,10);
     Lcd_Write_String("/  /");
     modo = 0;
-    
+    // Valores iniciales de fecha y hora
     enviar_x(0, 0, 1, 1, 0);
     
     while(1){
@@ -179,7 +89,7 @@ void main(void) {
         lecADC = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(200);
-        
+        // Cambios para mostrar en LCD
         conver = (lecADC*5.0)/255;
         sprintf(valADC, "%.2f", conver);
         Lcd_Set_Cursor(2,1);
@@ -205,6 +115,7 @@ void main(void) {
         Escribir_dato(year, 14, 2);
         
         
+        // Cambio de modo
         if(PORTBbits.RB7 == 0){ // Botón que selecciona m, h, d, m, a
             __delay_ms(20);
             if (modo <4){
@@ -215,6 +126,7 @@ void main(void) {
             }
         }
         
+        // Incrementos
         if(PORTBbits.RB6 == 0){
             __delay_ms(20);
             segundo = sec;
@@ -289,6 +201,8 @@ void main(void) {
             year1 = desconvertir(year1);
             enviar_x(minuto, hora, fecha1, mes1, year1);
         }
+        
+        // Decrementos
         if(PORTBbits.RB5 == 0){
             __delay_ms(20);
             segundo = sec;
@@ -374,13 +288,9 @@ void portsetup(){
     TRISD = 0;
     PORTD = 0;
     
-    // Configuración del puerto B (interrupciones)
+    // Configuración del puerto B 
     TRISB = 0b11100000;
     PORTB = 0b11100000;
-//    INTCONbits.GIE = 1;     // Habilitar interrupciones globales
-//    INTCONbits.RBIE = 1;    // Habilita interrupción del puerto B
-//    INTCONbits.RBIF = 0;    // Apaga la bandera de interrupción del puerto B
-//    IOCB = 0b11100000;      // Habilita la interrupción en cambio (IoC)
     WPUB = 0b11100000;      // Habilita el Weak Pull-Up en el puerto B
     OPTION_REGbits.nRBPU = 0;   // Deshabilita el bit de RBPU
     
