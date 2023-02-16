@@ -2863,10 +2863,11 @@ uint8_t modo;
 
 void portsetup(void);
 void Escribir_dato(uint8_t dato, uint8_t posx, uint8_t posy);
-# 157 "main.c"
+
 void main(void) {
     setupINTOSC(7);
     portsetup();
+
     Lcd_Init();
     Lcd_Clear();
     Lcd_Set_Cursor(1,2);
@@ -2915,6 +2916,7 @@ void main(void) {
         Escribir_dato(year, 14, 2);
 
 
+
         if(PORTBbits.RB7 == 0){
             _delay((unsigned long)((20)*(8000000/4000.0)));
             if (modo <4){
@@ -2924,6 +2926,7 @@ void main(void) {
                 modo = 0;
             }
         }
+
 
         if(PORTBbits.RB6 == 0){
             _delay((unsigned long)((20)*(8000000/4000.0)));
@@ -2999,6 +3002,8 @@ void main(void) {
             year1 = desconvertir(year1);
             enviar_x(minuto, hora, fecha1, mes1, year1);
         }
+
+
         if(PORTBbits.RB5 == 0){
             _delay((unsigned long)((20)*(8000000/4000.0)));
             segundo = sec;
@@ -3087,10 +3092,6 @@ void portsetup(){
 
     TRISB = 0b11100000;
     PORTB = 0b11100000;
-
-
-
-
     WPUB = 0b11100000;
     OPTION_REGbits.nRBPU = 0;
 

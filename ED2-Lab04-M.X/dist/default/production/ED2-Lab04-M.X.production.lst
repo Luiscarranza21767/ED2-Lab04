@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.40 build 20220703182018 
-                                                                                               Wed Feb 15 13:20:39 2023
+                                                                                               Wed Feb 15 21:17:03 2023
 
 Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9 
      1                           	processor	16F887
@@ -1747,7 +1747,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1733 ;;
   1734 ;; *************** function _main *****************
   1735 ;; Defined at:
-  1736 ;;		line 157 in file "main.c"
+  1736 ;;		line 66 in file "main.c"
   1737 ;; Parameters:    Size  Location     Type
   1738 ;;		None
   1739 ;; Auto vars:     Size  Location     Type
@@ -1795,79 +1795,79 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1781                           ;psect for function _main
   1782                           
   1783                           
-  1784                           ;main.c: 158:     setupINTOSC(7);
+  1784                           ;main.c: 67:     setupINTOSC(7);
   1785                           
   1786                           ;incstack = 0
   1787                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+btemp+1+pclath+cstack]
   1788     09C3  3007               	movlw	7
   1789     09C4  160A  118A  2001  120A  158A  	fcall	_setupINTOSC
   1790                           
-  1791                           ;main.c: 159:     portsetup();
+  1791                           ;main.c: 68:     portsetup();
   1792     09C9  160A  158A  2390  120A  158A  	fcall	_portsetup
   1793                           
-  1794                           ;main.c: 160:     Lcd_Init();
+  1794                           ;main.c: 70:     Lcd_Init();
   1795     09CE  160A  158A  2747  120A  158A  	fcall	_Lcd_Init
   1796                           
-  1797                           ;main.c: 161:     Lcd_Clear();
+  1797                           ;main.c: 71:     Lcd_Clear();
   1798     09D3  120A  158A  2001  120A  158A  	fcall	_Lcd_Clear
   1799                           
-  1800                           ;main.c: 162:     Lcd_Set_Cursor(1,2);
+  1800                           ;main.c: 72:     Lcd_Set_Cursor(1,2);
   1801     09D8  3002               	movlw	2
   1802     09D9  00F4               	movwf	Lcd_Set_Cursor@b
   1803     09DA  3001               	movlw	1
   1804     09DB  160A  158A  253F  120A  158A  	fcall	_Lcd_Set_Cursor
   1805                           
-  1806                           ;main.c: 163:     Lcd_Write_String("S1: ");
+  1806                           ;main.c: 73:     Lcd_Write_String("S1: ");
   1807     09E0  3097               	movlw	(low ((STR_1-__stringbase)| (0+32768)))& (0+255)
   1808     09E1  00F5               	movwf	Lcd_Write_String@a
   1809     09E2  3080               	movlw	128
   1810     09E3  00F6               	movwf	Lcd_Write_String@a+1
   1811     09E4  160A  158A  2502  120A  158A  	fcall	_Lcd_Write_String
   1812                           
-  1813                           ;main.c: 164:     Lcd_Set_Cursor(2,1);
+  1813                           ;main.c: 74:     Lcd_Set_Cursor(2,1);
   1814     09E9  01F4               	clrf	Lcd_Set_Cursor@b
   1815     09EA  0AF4               	incf	Lcd_Set_Cursor@b,f
   1816     09EB  3002               	movlw	2
   1817     09EC  160A  158A  253F  120A  158A  	fcall	_Lcd_Set_Cursor
   1818                           
-  1819                           ;main.c: 165:     Lcd_Write_String("    V");
+  1819                           ;main.c: 75:     Lcd_Write_String("    V");
   1820     09F1  3091               	movlw	(low ((STR_2-__stringbase)| (0+32768)))& (0+255)
   1821     09F2  00F5               	movwf	Lcd_Write_String@a
   1822     09F3  3080               	movlw	128
   1823     09F4  00F6               	movwf	Lcd_Write_String@a+1
   1824     09F5  160A  158A  2502  120A  158A  	fcall	_Lcd_Write_String
   1825                           
-  1826                           ;main.c: 166:     Lcd_Set_Cursor(1,10);
+  1826                           ;main.c: 76:     Lcd_Set_Cursor(1,10);
   1827     09FA  300A               	movlw	10
   1828     09FB  00F4               	movwf	Lcd_Set_Cursor@b
   1829     09FC  3001               	movlw	1
   1830     09FD  160A  158A  253F  120A  158A  	fcall	_Lcd_Set_Cursor
   1831                           
-  1832                           ;main.c: 167:     Lcd_Write_String(":  :");
+  1832                           ;main.c: 77:     Lcd_Write_String(":  :");
   1833     0A02  30A1               	movlw	(low ((STR_3-__stringbase)| (0+32768)))& (0+255)
   1834     0A03  00F5               	movwf	Lcd_Write_String@a
   1835     0A04  3080               	movlw	128
   1836     0A05  00F6               	movwf	Lcd_Write_String@a+1
   1837     0A06  160A  158A  2502  120A  158A  	fcall	_Lcd_Write_String
   1838                           
-  1839                           ;main.c: 168:     Lcd_Set_Cursor(2,10);
+  1839                           ;main.c: 78:     Lcd_Set_Cursor(2,10);
   1840     0A0B  300A               	movlw	10
   1841     0A0C  00F4               	movwf	Lcd_Set_Cursor@b
   1842     0A0D  3002               	movlw	2
   1843     0A0E  160A  158A  253F  120A  158A  	fcall	_Lcd_Set_Cursor
   1844                           
-  1845                           ;main.c: 169:     Lcd_Write_String("/  /");
+  1845                           ;main.c: 79:     Lcd_Write_String("/  /");
   1846     0A13  309C               	movlw	(low ((STR_4-__stringbase)| (0+32768)))& (0+255)
   1847     0A14  00F5               	movwf	Lcd_Write_String@a
   1848     0A15  3080               	movlw	128
   1849     0A16  00F6               	movwf	Lcd_Write_String@a+1
   1850     0A17  160A  158A  2502  120A  158A  	fcall	_Lcd_Write_String
   1851                           
-  1852                           ;main.c: 170:     modo = 0;
+  1852                           ;main.c: 80:     modo = 0;
   1853     0A1C  1683               	bsf	3,5	;RP0=1, select bank1
   1854     0A1D  01C7               	clrf	_modo^(0+128)
   1855                           
-  1856                           ;main.c: 172:     enviar_x(0, 0, 1, 1, 0);
+  1856                           ;main.c: 82:     enviar_x(0, 0, 1, 1, 0);
   1857     0A1E  01F2               	clrf	enviar_x@val2
   1858     0A1F  01F3               	clrf	enviar_x@val3
   1859     0A20  0AF3               	incf	enviar_x@val3,f
@@ -1879,23 +1879,23 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1865     0A25  160A  118A  20AE  120A  158A  	fcall	_enviar_x
   1866     0A2A                     l4372:
   1867                           
-  1868                           ;main.c: 175:         PORTA = modo;
+  1868                           ;main.c: 85:         PORTA = modo;
   1869     0A2A  1683               	bsf	3,5	;RP0=1, select bank1
   1870     0A2B  0847               	movf	_modo^(0+128),w
   1871     0A2C  1283               	bcf	3,5	;RP0=0, select bank0
   1872     0A2D  0085               	movwf	5	;volatile
   1873                           
-  1874                           ;main.c: 177:         I2C_Master_Start();
+  1874                           ;main.c: 87:         I2C_Master_Start();
   1875     0A2E  160A  158A  2284  120A  158A  	fcall	_I2C_Master_Start
   1876                           
-  1877                           ;main.c: 178:         I2C_Master_Write(0x11);
+  1877                           ;main.c: 88:         I2C_Master_Write(0x11);
   1878     0A33  3011               	movlw	17
   1879     0A34  00F0               	movwf	I2C_Master_Write@d
   1880     0A35  3000               	movlw	0
   1881     0A36  00F1               	movwf	I2C_Master_Write@d+1
   1882     0A37  160A  158A  2293  120A  158A  	fcall	_I2C_Master_Write
   1883                           
-  1884                           ;main.c: 179:         lecADC = I2C_Master_Read(0);
+  1884                           ;main.c: 89:         lecADC = I2C_Master_Read(0);
   1885     0A3C  3000               	movlw	0
   1886     0A3D  00F0               	movwf	I2C_Master_Read@a
   1887     0A3E  00F1               	movwf	I2C_Master_Read@a+1
@@ -1903,10 +1903,10 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1889     0A44  0870               	movf	?_I2C_Master_Read,w
   1890     0A45  00D6               	movwf	_lecADC^(0+128)
   1891                           
-  1892                           ;main.c: 180:         I2C_Master_Stop();
+  1892                           ;main.c: 90:         I2C_Master_Stop();
   1893     0A46  160A  158A  2289  120A  158A  	fcall	_I2C_Master_Stop
   1894                           
-  1895                           ;main.c: 181:         _delay((unsigned long)((200)*(8000000/4000.0)));
+  1895                           ;main.c: 91:         _delay((unsigned long)((200)*(8000000/4000.0)));
   1896     0A4B  3003               	movlw	3
   1897     0A4C  1283               	bcf	3,5	;RP0=0, select bank0
   1898     0A4D  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1924,7 +1924,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1910     0A58  2A53               	goto	u7457
   1911     0A59  0000               	nop
   1912                           
-  1913                           ;main.c: 183:         conver = (lecADC*5.0)/255;
+  1913                           ;main.c: 93:         conver = (lecADC*5.0)/255;
   1914     0A5A  3043               	movlw	67
   1915     0A5B  1283               	bcf	3,5	;RP0=0, select bank0
   1916     0A5C  1303               	bcf	3,6	;RP1=0, select bank0
@@ -1995,7 +1995,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1981     0AA9  1683               	bsf	3,5	;RP0=1, select bank1
   1982     0AAA  00C3               	movwf	_conver^(0+128)
   1983                           
-  1984                           ;main.c: 184:         sprintf(valADC, "%.2f", conver);
+  1984                           ;main.c: 94:         sprintf(valADC, "%.2f", conver);
   1985     0AAB  30A6               	movlw	(low ((STR_5-__stringbase)| (0+32768)))& (0+255)
   1986     0AAC  00A0               	movwf	sprintf@f^(0+128)
   1987     0AAD  0846               	movf	(_conver+3)^(0+128),w
@@ -2009,25 +2009,25 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   1995     0AB5  30D7               	movlw	(low (_valADC| 0))& (0+255)
   1996     0AB6  120A  118A  22CB  120A  158A  	fcall	_sprintf
   1997                           
-  1998                           ;main.c: 185:         Lcd_Set_Cursor(2,1);
+  1998                           ;main.c: 95:         Lcd_Set_Cursor(2,1);
   1999     0ABB  01F4               	clrf	Lcd_Set_Cursor@b
   2000     0ABC  0AF4               	incf	Lcd_Set_Cursor@b,f
   2001     0ABD  3002               	movlw	2
   2002     0ABE  160A  158A  253F  120A  158A  	fcall	_Lcd_Set_Cursor
   2003                           
-  2004                           ;main.c: 186:         Lcd_Write_String(valADC);
+  2004                           ;main.c: 96:         Lcd_Write_String(valADC);
   2005     0AC3  30D7               	movlw	(low (_valADC| 0))& (0+255)
   2006     0AC4  00F5               	movwf	Lcd_Write_String@a
   2007     0AC5  3000               	movlw	0
   2008     0AC6  00F6               	movwf	Lcd_Write_String@a+1
   2009     0AC7  160A  158A  2502  120A  158A  	fcall	_Lcd_Write_String
   2010                           
-  2011                           ;main.c: 189:         sec = leer_x(0x00);
+  2011                           ;main.c: 99:         sec = leer_x(0x00);
   2012     0ACC  3000               	movlw	0
   2013     0ACD  160A  158A  269F  120A  158A  	fcall	_leer_x
   2014     0AD2  00D3               	movwf	_sec^(0+128)
   2015                           
-  2016                           ;main.c: 190:         Escribir_dato(sec, 14, 1);
+  2016                           ;main.c: 100:         Escribir_dato(sec, 14, 1);
   2017     0AD3  300E               	movlw	14
   2018     0AD4  1283               	bcf	3,5	;RP0=0, select bank0
   2019     0AD5  00A3               	movwf	Escribir_dato@posx
@@ -2037,12 +2037,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2023     0AD9  0853               	movf	_sec^(0+128),w
   2024     0ADA  160A  158A  257D  120A  158A  	fcall	_Escribir_dato
   2025                           
-  2026                           ;main.c: 192:         min = leer_x(0x01);
+  2026                           ;main.c: 102:         min = leer_x(0x01);
   2027     0ADF  3001               	movlw	1
   2028     0AE0  160A  158A  269F  120A  158A  	fcall	_leer_x
   2029     0AE5  00D1               	movwf	_min^(0+128)
   2030                           
-  2031                           ;main.c: 193:         Escribir_dato(min, 11, 1);
+  2031                           ;main.c: 103:         Escribir_dato(min, 11, 1);
   2032     0AE6  300B               	movlw	11
   2033     0AE7  1283               	bcf	3,5	;RP0=0, select bank0
   2034     0AE8  00A3               	movwf	Escribir_dato@posx
@@ -2052,12 +2052,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2038     0AEC  0851               	movf	_min^(0+128),w
   2039     0AED  160A  158A  257D  120A  158A  	fcall	_Escribir_dato
   2040                           
-  2041                           ;main.c: 195:         hor = leer_x(0x02);
+  2041                           ;main.c: 105:         hor = leer_x(0x02);
   2042     0AF2  3002               	movlw	2
   2043     0AF3  160A  158A  269F  120A  158A  	fcall	_leer_x
   2044     0AF8  00CF               	movwf	_hor^(0+128)
   2045                           
-  2046                           ;main.c: 196:         Escribir_dato(hor, 8, 1);
+  2046                           ;main.c: 106:         Escribir_dato(hor, 8, 1);
   2047     0AF9  3008               	movlw	8
   2048     0AFA  1283               	bcf	3,5	;RP0=0, select bank0
   2049     0AFB  00A3               	movwf	Escribir_dato@posx
@@ -2067,12 +2067,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2053     0AFF  084F               	movf	_hor^(0+128),w
   2054     0B00  160A  158A  257D  120A  158A  	fcall	_Escribir_dato
   2055                           
-  2056                           ;main.c: 198:         fecha = leer_x(0x04);
+  2056                           ;main.c: 108:         fecha = leer_x(0x04);
   2057     0B05  3004               	movlw	4
   2058     0B06  160A  158A  269F  120A  158A  	fcall	_leer_x
   2059     0B0B  00CD               	movwf	_fecha^(0+128)
   2060                           
-  2061                           ;main.c: 199:         Escribir_dato(fecha, 8, 2);
+  2061                           ;main.c: 109:         Escribir_dato(fecha, 8, 2);
   2062     0B0C  3008               	movlw	8
   2063     0B0D  1283               	bcf	3,5	;RP0=0, select bank0
   2064     0B0E  00A3               	movwf	Escribir_dato@posx
@@ -2082,12 +2082,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2068     0B12  084D               	movf	_fecha^(0+128),w
   2069     0B13  160A  158A  257D  120A  158A  	fcall	_Escribir_dato
   2070                           
-  2071                           ;main.c: 201:         mes = leer_x(0x05);
+  2071                           ;main.c: 111:         mes = leer_x(0x05);
   2072     0B18  3005               	movlw	5
   2073     0B19  160A  158A  269F  120A  158A  	fcall	_leer_x
   2074     0B1E  00CB               	movwf	_mes^(0+128)
   2075                           
-  2076                           ;main.c: 202:         Escribir_dato(mes, 11, 2);
+  2076                           ;main.c: 112:         Escribir_dato(mes, 11, 2);
   2077     0B1F  300B               	movlw	11
   2078     0B20  1283               	bcf	3,5	;RP0=0, select bank0
   2079     0B21  00A3               	movwf	Escribir_dato@posx
@@ -2097,12 +2097,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2083     0B25  084B               	movf	_mes^(0+128),w
   2084     0B26  160A  158A  257D  120A  158A  	fcall	_Escribir_dato
   2085                           
-  2086                           ;main.c: 204:         year = leer_x(0x06);
+  2086                           ;main.c: 114:         year = leer_x(0x06);
   2087     0B2B  3006               	movlw	6
   2088     0B2C  160A  158A  269F  120A  158A  	fcall	_leer_x
   2089     0B31  00C9               	movwf	_year^(0+128)
   2090                           
-  2091                           ;main.c: 205:         Escribir_dato(year, 14, 2);
+  2091                           ;main.c: 115:         Escribir_dato(year, 14, 2);
   2092     0B32  300E               	movlw	14
   2093     0B33  1283               	bcf	3,5	;RP0=0, select bank0
   2094     0B34  00A3               	movwf	Escribir_dato@posx
@@ -2112,11 +2112,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2098     0B38  0849               	movf	_year^(0+128),w
   2099     0B39  160A  158A  257D  120A  158A  	fcall	_Escribir_dato
   2100                           
-  2101                           ;main.c: 208:         if(PORTBbits.RB7 == 0){
+  2101                           ;main.c: 119:         if(PORTBbits.RB7 == 0){
   2102     0B3E  1B86               	btfsc	6,7	;volatile
   2103     0B3F  2B58               	goto	l4424
   2104                           
-  2105                           ;main.c: 209:             _delay((unsigned long)((20)*(8000000/4000.0)));
+  2105                           ;main.c: 120:             _delay((unsigned long)((20)*(8000000/4000.0)));
   2106     0B40  3034               	movlw	52
   2107     0B41  1283               	bcf	3,5	;RP0=0, select bank0
   2108     0B42  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2129,7 +2129,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2115     0B48  0BED               	decfsz	??_main+1,f
   2116     0B49  2B46               	goto	u7467
   2117                           
-  2118                           ;main.c: 210:             if (modo <4){
+  2118                           ;main.c: 121:             if (modo <4){
   2119     0B4A  3004               	movlw	4
   2120     0B4B  1683               	bsf	3,5	;RP0=1, select bank1
   2121     0B4C  1303               	bcf	3,6	;RP1=0, select bank1
@@ -2137,7 +2137,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2123     0B4E  1803               	skipnc
   2124     0B4F  2B57               	goto	l4422
   2125                           
-  2126                           ;main.c: 211:                 modo += 1;
+  2126                           ;main.c: 122:                 modo += 1;
   2127     0B50  3001               	movlw	1
   2128     0B51  1283               	bcf	3,5	;RP0=0, select bank0
   2129     0B52  00EC               	movwf	??_main
@@ -2145,20 +2145,20 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2131     0B54  1683               	bsf	3,5	;RP0=1, select bank1
   2132     0B55  07C7               	addwf	_modo^(0+128),f
   2133                           
-  2134                           ;main.c: 212:             }
+  2134                           ;main.c: 123:             }
   2135     0B56  2B58               	goto	l4424
   2136     0B57                     l4422:
   2137                           
-  2138                           ;main.c: 214:                 modo = 0;
+  2138                           ;main.c: 125:                 modo = 0;
   2139     0B57  01C7               	clrf	_modo^(0+128)
   2140     0B58                     l4424:
   2141                           
-  2142                           ;main.c: 218:         if(PORTBbits.RB6 == 0){
+  2142                           ;main.c: 130:         if(PORTBbits.RB6 == 0){
   2143     0B58  1283               	bcf	3,5	;RP0=0, select bank0
   2144     0B59  1B06               	btfsc	6,6	;volatile
   2145     0B5A  2C20               	goto	l4500
   2146                           
-  2147                           ;main.c: 219:             _delay((unsigned long)((20)*(8000000/4000.0)));
+  2147                           ;main.c: 131:             _delay((unsigned long)((20)*(8000000/4000.0)));
   2148     0B5B  3034               	movlw	52
   2149     0B5C  1283               	bcf	3,5	;RP0=0, select bank0
   2150     0B5D  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2171,44 +2171,44 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2157     0B63  0BED               	decfsz	??_main+1,f
   2158     0B64  2B61               	goto	u7477
   2159                           
-  2160                           ;main.c: 220:             segundo = sec;
+  2160                           ;main.c: 132:             segundo = sec;
   2161     0B65  1683               	bsf	3,5	;RP0=1, select bank1
   2162     0B66  1303               	bcf	3,6	;RP1=0, select bank1
   2163     0B67  0853               	movf	_sec^(0+128),w
   2164     0B68  00D2               	movwf	_segundo^(0+128)
   2165                           
-  2166                           ;main.c: 221:             minuto = min;
+  2166                           ;main.c: 133:             minuto = min;
   2167     0B69  0851               	movf	_min^(0+128),w
   2168     0B6A  00D0               	movwf	_minuto^(0+128)
   2169                           
-  2170                           ;main.c: 222:             hora = hor;
+  2170                           ;main.c: 134:             hora = hor;
   2171     0B6B  084F               	movf	_hor^(0+128),w
   2172     0B6C  00CE               	movwf	_hora^(0+128)
   2173                           
-  2174                           ;main.c: 223:             fecha1 = fecha;
+  2174                           ;main.c: 135:             fecha1 = fecha;
   2175     0B6D  084D               	movf	_fecha^(0+128),w
   2176     0B6E  00CC               	movwf	_fecha1^(0+128)
   2177                           
-  2178                           ;main.c: 224:             mes1 = mes;
+  2178                           ;main.c: 136:             mes1 = mes;
   2179     0B6F  084B               	movf	_mes^(0+128),w
   2180     0B70  00CA               	movwf	_mes1^(0+128)
   2181                           
-  2182                           ;main.c: 225:             year1 = year;
+  2182                           ;main.c: 137:             year1 = year;
   2183     0B71  0849               	movf	_year^(0+128),w
   2184     0B72  00C8               	movwf	_year1^(0+128)
   2185                           
-  2186                           ;main.c: 227:             if (modo == 0){
+  2186                           ;main.c: 139:             if (modo == 0){
   2187     0B73  0847               	movf	_modo^(0+128),w
   2188     0B74  1D03               	btfss	3,2
   2189     0B75  2B83               	goto	l4436
   2190                           
-  2191                           ;main.c: 228:                 if (minuto<59){
+  2191                           ;main.c: 140:                 if (minuto<59){
   2192     0B76  303B               	movlw	59
   2193     0B77  0250               	subwf	_minuto^(0+128),w
   2194     0B78  1803               	skipnc
   2195     0B79  2B81               	goto	l4434
   2196                           
-  2197                           ;main.c: 229:                     minuto ++;
+  2197                           ;main.c: 141:                     minuto ++;
   2198     0B7A  3001               	movlw	1
   2199     0B7B  1283               	bcf	3,5	;RP0=0, select bank0
   2200     0B7C  00EC               	movwf	??_main
@@ -2216,11 +2216,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2202     0B7E  1683               	bsf	3,5	;RP0=1, select bank1
   2203     0B7F  07D0               	addwf	_minuto^(0+128),f
   2204                           
-  2205                           ;main.c: 230:                 }
+  2205                           ;main.c: 142:                 }
   2206     0B80  2BEA               	goto	l4488
   2207     0B81                     l4434:
   2208                           
-  2209                           ;main.c: 232:                     minuto = 0;
+  2209                           ;main.c: 144:                     minuto = 0;
   2210     0B81  01D0               	clrf	_minuto^(0+128)
   2211     0B82  2BEA               	goto	l4488
   2212     0B83                     l4436:
@@ -2228,13 +2228,13 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2214     0B84  1D03               	btfss	3,2
   2215     0B85  2B93               	goto	l4444
   2216                           
-  2217                           ;main.c: 236:                 if (hora<23){
+  2217                           ;main.c: 148:                 if (hora<23){
   2218     0B86  3017               	movlw	23
   2219     0B87  024E               	subwf	_hora^(0+128),w
   2220     0B88  1803               	skipnc
   2221     0B89  2B91               	goto	l4442
   2222                           
-  2223                           ;main.c: 237:                     hora ++;
+  2223                           ;main.c: 149:                     hora ++;
   2224     0B8A  3001               	movlw	1
   2225     0B8B  1283               	bcf	3,5	;RP0=0, select bank0
   2226     0B8C  00EC               	movwf	??_main
@@ -2242,11 +2242,11 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2228     0B8E  1683               	bsf	3,5	;RP0=1, select bank1
   2229     0B8F  07CE               	addwf	_hora^(0+128),f
   2230                           
-  2231                           ;main.c: 238:                 }
+  2231                           ;main.c: 150:                 }
   2232     0B90  2BEA               	goto	l4488
   2233     0B91                     l4442:
   2234                           
-  2235                           ;main.c: 240:                     hora = 0;
+  2235                           ;main.c: 152:                     hora = 0;
   2236     0B91  01CE               	clrf	_hora^(0+128)
   2237     0B92  2BEA               	goto	l4488
   2238     0B93                     l4444:
@@ -2255,7 +2255,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2241     0B95  1D03               	btfss	3,2
   2242     0B96  2BC8               	goto	l4474
   2243                           
-  2244                           ;main.c: 244:                 if((mes == 1) || (mes == 3) || (mes == 5) || (mes == 7) ||
+  2244                           ;main.c: 156:                 if((mes == 1) || (mes == 3) || (mes == 5) || (mes == 7) ||
       +                           (mes == 8) || (mes == 10) || (mes == 12)){
   2245     0B97  034B               	decf	_mes^(0+128),w
   2246     0B98  1903               	btfsc	3,2
@@ -2286,14 +2286,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2271     0BB1  2BC0               	goto	l4464
   2272     0BB2                     l4460:
   2273                           
-  2274                           ;main.c: 245:                     if (fecha1 < 31){
+  2274                           ;main.c: 157:                     if (fecha1 < 31){
   2275     0BB2  301F               	movlw	31
   2276     0BB3                     L1:
   2277     0BB3  024C               	subwf	_fecha1^(0+128),w
   2278     0BB4  1803               	skipnc
   2279     0BB5  2BBD               	goto	l120
   2280                           
-  2281                           ;main.c: 246:                         fecha1 ++;
+  2281                           ;main.c: 158:                         fecha1 ++;
   2282     0BB6  3001               	movlw	1
   2283     0BB7  1283               	bcf	3,5	;RP0=0, select bank0
   2284     0BB8  00EC               	movwf	??_main
@@ -2301,13 +2301,13 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2286     0BBA  1683               	bsf	3,5	;RP0=1, select bank1
   2287     0BBB  07CC               	addwf	_fecha1^(0+128),f
   2288                           
-  2289                           ;main.c: 247:                     }
+  2289                           ;main.c: 159:                     }
   2290     0BBC  2BEA               	goto	l4488
   2291     0BBD                     l120:	
-  2292                           ;main.c: 248:                     else {
+  2292                           ;main.c: 160:                     else {
   2293                           
   2294                           
-  2295                           ;main.c: 249:                         fecha1 = 1;
+  2295                           ;main.c: 161:                         fecha1 = 1;
   2296     0BBD  01CC               	clrf	_fecha1^(0+128)
   2297     0BBE  0ACC               	incf	_fecha1^(0+128),f
   2298     0BBF  2BEA               	goto	l4488
@@ -2317,12 +2317,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2302     0BC2  1D03               	btfss	3,2
   2303     0BC3  2BC6               	goto	l4470
   2304                           
-  2305                           ;main.c: 253:                     if (fecha1 < 28){
+  2305                           ;main.c: 165:                     if (fecha1 < 28){
   2306     0BC4  301C               	movlw	28
   2307     0BC5  2BB3               	goto	L1
   2308     0BC6                     l4470:
   2309                           
-  2310                           ;main.c: 261:                     if (fecha1 < 30){
+  2310                           ;main.c: 173:                     if (fecha1 < 30){
   2311     0BC6  301E               	movlw	30
   2312     0BC7  2BB3               	goto	L1
   2313     0BC8                     l4474:
@@ -2331,13 +2331,13 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2316     0BCA  1D03               	btfss	3,2
   2317     0BCB  2BDA               	goto	l4480
   2318                           
-  2319                           ;main.c: 270:                 if (mes<12){
+  2319                           ;main.c: 182:                 if (mes<12){
   2320     0BCC  300C               	movlw	12
   2321     0BCD  024B               	subwf	_mes^(0+128),w
   2322     0BCE  1803               	skipnc
   2323     0BCF  2BD7               	goto	l131
   2324                           
-  2325                           ;main.c: 271:                     mes1 ++;
+  2325                           ;main.c: 183:                     mes1 ++;
   2326     0BD0  3001               	movlw	1
   2327     0BD1  1283               	bcf	3,5	;RP0=0, select bank0
   2328     0BD2  00EC               	movwf	??_main
@@ -2345,13 +2345,13 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2330     0BD4  1683               	bsf	3,5	;RP0=1, select bank1
   2331     0BD5  07CA               	addwf	_mes1^(0+128),f
   2332                           
-  2333                           ;main.c: 272:                 }
+  2333                           ;main.c: 184:                 }
   2334     0BD6  2BEA               	goto	l4488
   2335     0BD7                     l131:	
-  2336                           ;main.c: 273:                 else {
+  2336                           ;main.c: 185:                 else {
   2337                           
   2338                           
-  2339                           ;main.c: 274:                     mes1 = 1;
+  2339                           ;main.c: 186:                     mes1 = 1;
   2340     0BD7  01CA               	clrf	_mes1^(0+128)
   2341     0BD8  0ACA               	incf	_mes1^(0+128),f
   2342     0BD9  2BEA               	goto	l4488
@@ -2361,13 +2361,13 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2346     0BDC  1D03               	btfss	3,2
   2347     0BDD  2BEA               	goto	l4488
   2348                           
-  2349                           ;main.c: 278:                 if (year <99){
+  2349                           ;main.c: 190:                 if (year <99){
   2350     0BDE  3063               	movlw	99
   2351     0BDF  0249               	subwf	_year^(0+128),w
   2352     0BE0  1803               	skipnc
   2353     0BE1  2BE9               	goto	l4486
   2354                           
-  2355                           ;main.c: 279:                     year1 ++;
+  2355                           ;main.c: 191:                     year1 ++;
   2356     0BE2  3001               	movlw	1
   2357     0BE3  1283               	bcf	3,5	;RP0=0, select bank0
   2358     0BE4  00EC               	movwf	??_main
@@ -2375,45 +2375,45 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2360     0BE6  1683               	bsf	3,5	;RP0=1, select bank1
   2361     0BE7  07C8               	addwf	_year1^(0+128),f
   2362                           
-  2363                           ;main.c: 280:                 }
+  2363                           ;main.c: 192:                 }
   2364     0BE8  2BEA               	goto	l4488
   2365     0BE9                     l4486:
   2366                           
-  2367                           ;main.c: 282:                     year1 = 0;
+  2367                           ;main.c: 194:                     year1 = 0;
   2368     0BE9  01C8               	clrf	_year1^(0+128)
   2369     0BEA                     l4488:
   2370                           
-  2371                           ;main.c: 285:             minuto = desconvertir(minuto);
+  2371                           ;main.c: 197:             minuto = desconvertir(minuto);
   2372     0BEA  0850               	movf	_minuto^(0+128),w
   2373     0BEB  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2374     0BF0  1683               	bsf	3,5	;RP0=1, select bank1
   2375     0BF1  00D0               	movwf	_minuto^(0+128)
   2376                           
-  2377                           ;main.c: 286:             hora = desconvertir(hora);
+  2377                           ;main.c: 198:             hora = desconvertir(hora);
   2378     0BF2  084E               	movf	_hora^(0+128),w
   2379     0BF3  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2380     0BF8  1683               	bsf	3,5	;RP0=1, select bank1
   2381     0BF9  00CE               	movwf	_hora^(0+128)
   2382                           
-  2383                           ;main.c: 287:             fecha1 = desconvertir(fecha1);
+  2383                           ;main.c: 199:             fecha1 = desconvertir(fecha1);
   2384     0BFA  084C               	movf	_fecha1^(0+128),w
   2385     0BFB  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2386     0C00  1683               	bsf	3,5	;RP0=1, select bank1
   2387     0C01  00CC               	movwf	_fecha1^(0+128)
   2388                           
-  2389                           ;main.c: 288:             mes1 = desconvertir(mes1);
+  2389                           ;main.c: 200:             mes1 = desconvertir(mes1);
   2390     0C02  084A               	movf	_mes1^(0+128),w
   2391     0C03  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2392     0C08  1683               	bsf	3,5	;RP0=1, select bank1
   2393     0C09  00CA               	movwf	_mes1^(0+128)
   2394                           
-  2395                           ;main.c: 289:             year1 = desconvertir(year1);
+  2395                           ;main.c: 201:             year1 = desconvertir(year1);
   2396     0C0A  0848               	movf	_year1^(0+128),w
   2397     0C0B  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2398     0C10  1683               	bsf	3,5	;RP0=1, select bank1
   2399     0C11  00C8               	movwf	_year1^(0+128)
   2400                           
-  2401                           ;main.c: 290:             enviar_x(minuto, hora, fecha1, mes1, year1);
+  2401                           ;main.c: 202:             enviar_x(minuto, hora, fecha1, mes1, year1);
   2402     0C12  084E               	movf	_hora^(0+128),w
   2403     0C13  00F2               	movwf	enviar_x@val2
   2404     0C14  084C               	movf	_fecha1^(0+128),w
@@ -2426,12 +2426,12 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2411     0C1B  160A  118A  20AE  120A  158A  	fcall	_enviar_x
   2412     0C20                     l4500:
   2413                           
-  2414                           ;main.c: 292:         if(PORTBbits.RB5 == 0){
+  2414                           ;main.c: 206:         if(PORTBbits.RB5 == 0){
   2415     0C20  1283               	bcf	3,5	;RP0=0, select bank0
   2416     0C21  1A86               	btfsc	6,5	;volatile
   2417     0C22  2A2A               	goto	l4372
   2418                           
-  2419                           ;main.c: 293:             _delay((unsigned long)((20)*(8000000/4000.0)));
+  2419                           ;main.c: 207:             _delay((unsigned long)((20)*(8000000/4000.0)));
   2420     0C23  3034               	movlw	52
   2421     0C24  1283               	bcf	3,5	;RP0=0, select bank0
   2422     0C25  1303               	bcf	3,6	;RP1=0, select bank0
@@ -2444,51 +2444,51 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2429     0C2B  0BED               	decfsz	??_main+1,f
   2430     0C2C  2C29               	goto	u7487
   2431                           
-  2432                           ;main.c: 294:             segundo = sec;
+  2432                           ;main.c: 208:             segundo = sec;
   2433     0C2D  1683               	bsf	3,5	;RP0=1, select bank1
   2434     0C2E  1303               	bcf	3,6	;RP1=0, select bank1
   2435     0C2F  0853               	movf	_sec^(0+128),w
   2436     0C30  00D2               	movwf	_segundo^(0+128)
   2437                           
-  2438                           ;main.c: 295:             minuto = min;
+  2438                           ;main.c: 209:             minuto = min;
   2439     0C31  0851               	movf	_min^(0+128),w
   2440     0C32  00D0               	movwf	_minuto^(0+128)
   2441                           
-  2442                           ;main.c: 296:             hora = hor;
+  2442                           ;main.c: 210:             hora = hor;
   2443     0C33  084F               	movf	_hor^(0+128),w
   2444     0C34  00CE               	movwf	_hora^(0+128)
   2445                           
-  2446                           ;main.c: 297:             fecha1 = fecha;
+  2446                           ;main.c: 211:             fecha1 = fecha;
   2447     0C35  084D               	movf	_fecha^(0+128),w
   2448     0C36  00CC               	movwf	_fecha1^(0+128)
   2449                           
-  2450                           ;main.c: 298:             mes1 = mes;
+  2450                           ;main.c: 212:             mes1 = mes;
   2451     0C37  084B               	movf	_mes^(0+128),w
   2452     0C38  00CA               	movwf	_mes1^(0+128)
   2453                           
-  2454                           ;main.c: 299:             year1 = year;
+  2454                           ;main.c: 213:             year1 = year;
   2455     0C39  0849               	movf	_year^(0+128),w
   2456     0C3A  00C8               	movwf	_year1^(0+128)
   2457                           
-  2458                           ;main.c: 300:             if (modo == 0){
+  2458                           ;main.c: 214:             if (modo == 0){
   2459     0C3B  0847               	movf	_modo^(0+128),w
   2460     0C3C  1D03               	btfss	3,2
   2461     0C3D  2C47               	goto	l4512
   2462                           
-  2463                           ;main.c: 301:                 if (minuto > 0){
+  2463                           ;main.c: 215:                 if (minuto > 0){
   2464     0C3E  0850               	movf	_minuto^(0+128),w
   2465     0C3F  1903               	btfsc	3,2
   2466     0C40  2C44               	goto	l4510
   2467                           
-  2468                           ;main.c: 302:                     minuto --;
+  2468                           ;main.c: 216:                     minuto --;
   2469     0C41  3001               	movlw	1
   2470     0C42  02D0               	subwf	_minuto^(0+128),f
   2471                           
-  2472                           ;main.c: 303:                 }
+  2472                           ;main.c: 217:                 }
   2473     0C43  2CA6               	goto	l4572
   2474     0C44                     l4510:
   2475                           
-  2476                           ;main.c: 305:                     minuto = 59;
+  2476                           ;main.c: 219:                     minuto = 59;
   2477     0C44  303B               	movlw	59
   2478     0C45  00D0               	movwf	_minuto^(0+128)
   2479     0C46  2CA6               	goto	l4572
@@ -2497,20 +2497,20 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2482     0C48  1D03               	btfss	3,2
   2483     0C49  2C53               	goto	l4520
   2484                           
-  2485                           ;main.c: 309:                 if (hora>0){
+  2485                           ;main.c: 223:                 if (hora>0){
   2486     0C4A  084E               	movf	_hora^(0+128),w
   2487     0C4B  1903               	btfsc	3,2
   2488     0C4C  2C50               	goto	l4518
   2489                           
-  2490                           ;main.c: 310:                     hora --;
+  2490                           ;main.c: 224:                     hora --;
   2491     0C4D  3001               	movlw	1
   2492     0C4E  02CE               	subwf	_hora^(0+128),f
   2493                           
-  2494                           ;main.c: 311:                 }
+  2494                           ;main.c: 225:                 }
   2495     0C4F  2CA6               	goto	l4572
   2496     0C50                     l4518:
   2497                           
-  2498                           ;main.c: 313:                     hora = 23;
+  2498                           ;main.c: 227:                     hora = 23;
   2499     0C50  3017               	movlw	23
   2500     0C51  00CE               	movwf	_hora^(0+128)
   2501     0C52  2CA6               	goto	l4572
@@ -2520,7 +2520,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2505     0C55  1D03               	btfss	3,2
   2506     0C56  2C8C               	goto	l4556
   2507                           
-  2508                           ;main.c: 317:                 if((mes == 1) || (mes == 3) || (mes == 5) || (mes == 7) ||
+  2508                           ;main.c: 231:                 if((mes == 1) || (mes == 3) || (mes == 5) || (mes == 7) ||
       +                           (mes == 8) || (mes == 10) || (mes == 12)){
   2509     0C57  034B               	decf	_mes^(0+128),w
   2510     0C58  1903               	btfsc	3,2
@@ -2551,22 +2551,22 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2535     0C71  2C7B               	goto	l4542
   2536     0C72                     l4536:
   2537                           
-  2538                           ;main.c: 318:                     if (fecha1 > 1){
+  2538                           ;main.c: 232:                     if (fecha1 > 1){
   2539     0C72  3002               	movlw	2
   2540     0C73  024C               	subwf	_fecha1^(0+128),w
   2541     0C74  1C03               	skipc
   2542     0C75  2C79               	goto	l4540
   2543     0C76                     l4538:
   2544                           
-  2545                           ;main.c: 319:                         fecha1 --;
+  2545                           ;main.c: 233:                         fecha1 --;
   2546     0C76  3001               	movlw	1
   2547     0C77  02CC               	subwf	_fecha1^(0+128),f
   2548                           
-  2549                           ;main.c: 320:                     }
+  2549                           ;main.c: 234:                     }
   2550     0C78  2CA6               	goto	l4572
   2551     0C79                     l4540:
   2552                           
-  2553                           ;main.c: 322:                         fecha1 = 31;
+  2553                           ;main.c: 236:                         fecha1 = 31;
   2554     0C79  301F               	movlw	31
   2555     0C7A  2C8A               	goto	L3
   2556     0C7B                     l4542:
@@ -2575,24 +2575,24 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2559     0C7D  1D03               	btfss	3,2
   2560     0C7E  2C85               	goto	l4550
   2561                           
-  2562                           ;main.c: 326:                     if (fecha1 > 1){
+  2562                           ;main.c: 240:                     if (fecha1 > 1){
   2563     0C7F  3002               	movlw	2
   2564     0C80  024C               	subwf	_fecha1^(0+128),w
   2565     0C81  1803               	btfsc	3,0
   2566     0C82  2C76               	goto	l4538
   2567                           
-  2568                           ;main.c: 330:                         fecha1 = 28;
+  2568                           ;main.c: 244:                         fecha1 = 28;
   2569     0C83  301C               	movlw	28
   2570     0C84  2C8A               	goto	L3
   2571     0C85                     l4550:
   2572                           
-  2573                           ;main.c: 334:                     if (fecha1 > 1){
+  2573                           ;main.c: 248:                     if (fecha1 > 1){
   2574     0C85  3002               	movlw	2
   2575     0C86  024C               	subwf	_fecha1^(0+128),w
   2576     0C87  1803               	btfsc	3,0
   2577     0C88  2C76               	goto	l4538
   2578                           
-  2579                           ;main.c: 338:                         fecha1 = 30;
+  2579                           ;main.c: 252:                         fecha1 = 30;
   2580     0C89  301E               	movlw	30
   2581     0C8A                     L3:
   2582     0C8A  00CC               	movwf	_fecha1^(0+128)
@@ -2603,21 +2603,21 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2587     0C8E  1D03               	btfss	3,2
   2588     0C8F  2C9A               	goto	l4564
   2589                           
-  2590                           ;main.c: 343:                 if (mes1 > 1){
+  2590                           ;main.c: 257:                 if (mes1 > 1){
   2591     0C90  3002               	movlw	2
   2592     0C91  024A               	subwf	_mes1^(0+128),w
   2593     0C92  1C03               	skipc
   2594     0C93  2C97               	goto	l4562
   2595                           
-  2596                           ;main.c: 344:                     mes1 --;
+  2596                           ;main.c: 258:                     mes1 --;
   2597     0C94  3001               	movlw	1
   2598     0C95  02CA               	subwf	_mes1^(0+128),f
   2599                           
-  2600                           ;main.c: 345:                 }
+  2600                           ;main.c: 259:                 }
   2601     0C96  2CA6               	goto	l4572
   2602     0C97                     l4562:
   2603                           
-  2604                           ;main.c: 347:                     mes1 = 12;
+  2604                           ;main.c: 261:                     mes1 = 12;
   2605     0C97  300C               	movlw	12
   2606     0C98  00CA               	movwf	_mes1^(0+128)
   2607     0C99  2CA6               	goto	l4572
@@ -2627,55 +2627,55 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   2611     0C9C  1D03               	btfss	3,2
   2612     0C9D  2CA6               	goto	l4572
   2613                           
-  2614                           ;main.c: 351:                 if (year1 > 0){
+  2614                           ;main.c: 265:                 if (year1 > 0){
   2615     0C9E  0848               	movf	_year1^(0+128),w
   2616     0C9F  1903               	btfsc	3,2
   2617     0CA0  2CA4               	goto	l4570
   2618                           
-  2619                           ;main.c: 352:                     year1 --;
+  2619                           ;main.c: 266:                     year1 --;
   2620     0CA1  3001               	movlw	1
   2621     0CA2  02C8               	subwf	_year1^(0+128),f
   2622                           
-  2623                           ;main.c: 353:                 }
+  2623                           ;main.c: 267:                 }
   2624     0CA3  2CA6               	goto	l4572
   2625     0CA4                     l4570:
   2626                           
-  2627                           ;main.c: 355:                     year1 = 99;
+  2627                           ;main.c: 269:                     year1 = 99;
   2628     0CA4  3063               	movlw	99
   2629     0CA5  00C8               	movwf	_year1^(0+128)
   2630     0CA6                     l4572:
   2631                           
-  2632                           ;main.c: 358:             minuto = desconvertir(minuto);
+  2632                           ;main.c: 272:             minuto = desconvertir(minuto);
   2633     0CA6  0850               	movf	_minuto^(0+128),w
   2634     0CA7  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2635     0CAC  1683               	bsf	3,5	;RP0=1, select bank1
   2636     0CAD  00D0               	movwf	_minuto^(0+128)
   2637                           
-  2638                           ;main.c: 359:             hora = desconvertir(hora);
+  2638                           ;main.c: 273:             hora = desconvertir(hora);
   2639     0CAE  084E               	movf	_hora^(0+128),w
   2640     0CAF  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2641     0CB4  1683               	bsf	3,5	;RP0=1, select bank1
   2642     0CB5  00CE               	movwf	_hora^(0+128)
   2643                           
-  2644                           ;main.c: 360:             fecha1 = desconvertir(fecha1);
+  2644                           ;main.c: 274:             fecha1 = desconvertir(fecha1);
   2645     0CB6  084C               	movf	_fecha1^(0+128),w
   2646     0CB7  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2647     0CBC  1683               	bsf	3,5	;RP0=1, select bank1
   2648     0CBD  00CC               	movwf	_fecha1^(0+128)
   2649                           
-  2650                           ;main.c: 361:             mes1 = desconvertir(mes1);
+  2650                           ;main.c: 275:             mes1 = desconvertir(mes1);
   2651     0CBE  084A               	movf	_mes1^(0+128),w
   2652     0CBF  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2653     0CC4  1683               	bsf	3,5	;RP0=1, select bank1
   2654     0CC5  00CA               	movwf	_mes1^(0+128)
   2655                           
-  2656                           ;main.c: 362:             year1 = desconvertir(year1);
+  2656                           ;main.c: 276:             year1 = desconvertir(year1);
   2657     0CC6  0848               	movf	_year1^(0+128),w
   2658     0CC7  160A  158A  232E  120A  158A  	fcall	_desconvertir
   2659     0CCC  1683               	bsf	3,5	;RP0=1, select bank1
   2660     0CCD  00C8               	movwf	_year1^(0+128)
   2661                           
-  2662                           ;main.c: 363:             enviar_x(minuto, hora, fecha1, mes1, year1);
+  2662                           ;main.c: 277:             enviar_x(minuto, hora, fecha1, mes1, year1);
   2663     0CCE  084E               	movf	_hora^(0+128),w
   2664     0CCF  00F2               	movwf	enviar_x@val2
   2665     0CD0  084C               	movf	_fecha1^(0+128),w
@@ -8626,7 +8626,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   8504     1B90                     __ptext21:	
   8505 ;; *************** function _portsetup *****************
   8506 ;; Defined at:
-  8507 ;;		line 369 in file "main.c"
+  8507 ;;		line 283 in file "main.c"
   8508 ;; Parameters:    Size  Location     Type
   8509 ;;		None
   8510 ;; Auto vars:     Size  Location     Type
@@ -8658,51 +8658,51 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
   8536                           ;psect for function _portsetup
   8537                           
   8538                           
-  8539                           ;main.c: 370:     ANSEL = 0;
+  8539                           ;main.c: 284:     ANSEL = 0;
   8540                           
   8541                           ;incstack = 0
   8542                           ; Regs used in _portsetup: [wreg+status,2+status,0+pclath+cstack]
   8543     1B90  1703               	bsf	3,6	;RP1=1, select bank3
   8544     1B91  0188               	clrf	8	;volatile
   8545                           
-  8546                           ;main.c: 371:     ANSELH = 0;
+  8546                           ;main.c: 285:     ANSELH = 0;
   8547     1B92  0189               	clrf	9	;volatile
   8548                           
-  8549                           ;main.c: 372:     TRISA = 0;
+  8549                           ;main.c: 286:     TRISA = 0;
   8550     1B93  1303               	bcf	3,6	;RP1=0, select bank1
   8551     1B94  0185               	clrf	5	;volatile
   8552                           
-  8553                           ;main.c: 373:     PORTA = 0;
+  8553                           ;main.c: 287:     PORTA = 0;
   8554     1B95  1283               	bcf	3,5	;RP0=0, select bank0
   8555     1B96  0185               	clrf	5	;volatile
   8556                           
-  8557                           ;main.c: 374:     TRISD = 0;
+  8557                           ;main.c: 288:     TRISD = 0;
   8558     1B97  1683               	bsf	3,5	;RP0=1, select bank1
   8559     1B98  0188               	clrf	8	;volatile
   8560                           
-  8561                           ;main.c: 375:     PORTD = 0;
+  8561                           ;main.c: 289:     PORTD = 0;
   8562     1B99  1283               	bcf	3,5	;RP0=0, select bank0
   8563     1B9A  0188               	clrf	8	;volatile
   8564                           
-  8565                           ;main.c: 378:     TRISB = 0b11100000;
+  8565                           ;main.c: 292:     TRISB = 0b11100000;
   8566     1B9B  30E0               	movlw	224
   8567     1B9C  1683               	bsf	3,5	;RP0=1, select bank1
   8568     1B9D  0086               	movwf	6	;volatile
   8569                           
-  8570                           ;main.c: 379:     PORTB = 0b11100000;
+  8570                           ;main.c: 293:     PORTB = 0b11100000;
   8571     1B9E  30E0               	movlw	224
   8572     1B9F  1283               	bcf	3,5	;RP0=0, select bank0
   8573     1BA0  0086               	movwf	6	;volatile
   8574                           
-  8575                           ;main.c: 384:     WPUB = 0b11100000;
+  8575                           ;main.c: 294:     WPUB = 0b11100000;
   8576     1BA1  30E0               	movlw	224
   8577     1BA2  1683               	bsf	3,5	;RP0=1, select bank1
   8578     1BA3  0095               	movwf	21	;volatile
   8579                           
-  8580                           ;main.c: 385:     OPTION_REGbits.nRBPU = 0;
+  8580                           ;main.c: 295:     OPTION_REGbits.nRBPU = 0;
   8581     1BA4  1381               	bcf	1,7	;volatile
   8582                           
-  8583                           ;main.c: 387:     I2C_Master_Init(100000);
+  8583                           ;main.c: 297:     I2C_Master_Init(100000);
   8584     1BA5  3000               	movlw	0
   8585     1BA6  1283               	bcf	3,5	;RP0=0, select bank0
   8586     1BA7  00A3               	movwf	I2C_Master_Init@c+3
@@ -10584,7 +10584,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
  10457     1D7D                     __ptext39:	
  10458 ;; *************** function _Escribir_dato *****************
  10459 ;; Defined at:
- 10460 ;;		line 391 in file "main.c"
+ 10460 ;;		line 301 in file "main.c"
  10461 ;; Parameters:    Size  Location     Type
  10462 ;;  dato            1    wreg     unsigned char 
  10463 ;;  posx            1    3[BANK0 ] unsigned char 
@@ -10627,14 +10627,14 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
  10500     1D7D  1283               	bcf	3,5	;RP0=0, select bank0
  10501     1D7E  00A5               	movwf	Escribir_dato@dato
  10502                           
- 10503                           ;main.c: 392:     Lcd_Set_Cursor(posy, posx+1);
+ 10503                           ;main.c: 302:     Lcd_Set_Cursor(posy, posx+1);
  10504     1D7F  0823               	movf	Escribir_dato@posx,w
  10505     1D80  3E01               	addlw	1
  10506     1D81  00F4               	movwf	Lcd_Set_Cursor@b
  10507     1D82  0824               	movf	Escribir_dato@posy,w
  10508     1D83  160A  158A  253F  160A  158A  	fcall	_Lcd_Set_Cursor
  10509                           
- 10510                           ;main.c: 393:     unidad = inttochar(descomponer(0, dato));
+ 10510                           ;main.c: 303:     unidad = inttochar(descomponer(0, dato));
  10511     1D88  3000               	movlw	0
  10512     1D89  00FB               	movwf	descomponer@pos
  10513     1D8A  00FC               	movwf	descomponer@pos+1
@@ -10646,17 +10646,17 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
  10519     1D98  1683               	bsf	3,5	;RP0=1, select bank1
  10520     1D99  00D5               	movwf	_unidad^(0+128)
  10521                           
- 10522                           ;main.c: 394:     Lcd_Write_Char(unidad);
+ 10522                           ;main.c: 304:     Lcd_Write_Char(unidad);
  10523     1D9A  0855               	movf	_unidad^(0+128),w
  10524     1D9B  160A  158A  23FA  160A  158A  	fcall	_Lcd_Write_Char
  10525                           
- 10526                           ;main.c: 395:     Lcd_Set_Cursor(posy, posx);
+ 10526                           ;main.c: 305:     Lcd_Set_Cursor(posy, posx);
  10527     1DA0  0823               	movf	Escribir_dato@posx,w
  10528     1DA1  00F4               	movwf	Lcd_Set_Cursor@b
  10529     1DA2  0824               	movf	Escribir_dato@posy,w
  10530     1DA3  160A  158A  253F  160A  158A  	fcall	_Lcd_Set_Cursor
  10531                           
- 10532                           ;main.c: 396:     decena = inttochar(descomponer(1, dato));
+ 10532                           ;main.c: 306:     decena = inttochar(descomponer(1, dato));
  10533     1DA8  3001               	movlw	1
  10534     1DA9  00FB               	movwf	descomponer@pos
  10535     1DAA  3000               	movlw	0
@@ -10669,7 +10669,7 @@ Microchip MPLAB XC8 C Compiler v2.40 (Free license) build 20220703182018 Og9
  10542     1DB9  1683               	bsf	3,5	;RP0=1, select bank1
  10543     1DBA  00D4               	movwf	_decena^(0+128)
  10544                           
- 10545                           ;main.c: 397:     Lcd_Write_Char(decena);
+ 10545                           ;main.c: 307:     Lcd_Write_Char(decena);
  10546     1DBB  0854               	movf	_decena^(0+128),w
  10547     1DBC  160A  158A  23FA   	fcall	_Lcd_Write_Char
  10548     1DBF  0008               	return
@@ -11977,7 +11977,7 @@ DATA                 0      0      98      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.40 build 20220703182018 
-Symbol Table                                                                                   Wed Feb 15 13:20:39 2023
+Symbol Table                                                                                   Wed Feb 15 21:17:03 2023
 
                     ___fldiv@aexp 0057                      ___fldiv@bexp 0056                                 pc 0002  
                     ___fldiv@sign 004F                    ___bmul@product 0072                    ?_Escribir_dato 0023  
